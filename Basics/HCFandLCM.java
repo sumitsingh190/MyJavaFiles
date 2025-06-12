@@ -29,3 +29,29 @@ public class HCFandLCM {
 }
 //Time complexity: O(log(min(a, b)))
 //Space Complexity: O(1)
+
+public class LCMWithoutHCF {
+
+    // Function to find LCM without HCF
+    public static int findLCM(int a, int b) {
+        int max = Math.max(a, b); // Start checking from the max of a and b
+
+        while (true) {
+            if (max % a == 0 && max % b == 0) {
+                return max; // Found LCM
+            }
+            max++; // Keep checking next number
+        }
+    }
+
+    public static void main(String[] args) {
+        int num1 = 60, num2 = 48;
+
+        int lcm = findLCM(num1, num2);
+
+        System.out.println("LCM of " + num1 + " and " + num2 + " = " + lcm);
+    }
+}
+
+
+// worst case - O(a*b)
